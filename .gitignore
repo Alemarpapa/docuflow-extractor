@@ -4,3 +4,4 @@ data/*.sqlite
 data/*.sqlite-journal
 *.log
 .env
+.venv/
