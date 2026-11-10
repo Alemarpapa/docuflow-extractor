@@ -1,5 +1,6 @@
 # 📑 DocuFlow Extractor — Autonomous Document Ingestion & Structured Output Pipeline
 
+[![CI](https://github.com/Alemarpapa/docuflow-extractor/actions/workflows/ci.yml/badge.svg)](https://github.com/Alemarpapa/docuflow-extractor/actions/workflows/ci.yml)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue.svg?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Zod](https://img.shields.io/badge/Schema%20Contract-Zod-306998.svg)](https://zod.dev/)
 [![Vitest](https://img.shields.io/badge/Tested%20with-Vitest-yellow.svg?logo=vitest&logoColor=white)](https://vitest.dev/)
