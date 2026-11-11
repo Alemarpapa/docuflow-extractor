@@ -78,6 +78,25 @@ npm run demo
 ```
 This executes the batch pipeline over sample enterprise invoices, demonstrates automatic discrepancy detection, and prints formatted SQLite verification tables.
 
+### Example output
+
+Real output from `npm run demo` (trimmed). The second invoice is flagged because its numbers don't add up:
+
+```text
+📄 [BATCH 1/2] Processing Invoice: apex_cloud_october.pdf
+✅ Extracted Invoice #INV-2026-8841
+   Subtotal:     $1700.00 | Tax: $170.00
+   Grand Total:  $1870.00 USD
+   Status:       [APPROVED]
+
+📄 [BATCH 2/2] Processing Invoice: datastream_q3_mismatch.pdf
+⚠️ Extracted Invoice #INV-2026-9912
+   Subtotal:     $2100.00 | Tax: $210.00
+   Grand Total:  $2450.00 USD
+   Status:       [NEEDS_REVIEW]
+   Discrepancy:  Subtotal + Tax ($2310.00) does not match stated grand total ($2450.00)
+```
+
 ### 3. Run Automated Tests
 ```bash
 npm test
