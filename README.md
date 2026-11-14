@@ -7,7 +7,7 @@
 [![SQLite](https://img.shields.io/badge/Storage-Better--SQLite3-003B57.svg?logo=sqlite&logoColor=white)](https://github.com/WiseLibs/better-sqlite3)
 [![License: MIT](https://img.shields.io/badge/License-MIT-teal.svg)](LICENSE)
 
-An enterprise-grade document ingestion pipeline engineered to transform unstructured financial documents, commercial invoices, and contracts into strictly validated relational records. Built with **Structured Outputs**, mathematical **3-way reconciliation guardrails**, and automatic review routing.
+A small invoice-extraction pipeline: a rule-based parser turns invoice text into records validated with Zod, cross-checks line items, subtotal, tax and total, and routes mismatches to human review. Portfolio project with synthetic sample data.
 
 ---
 
@@ -16,7 +16,7 @@ An enterprise-grade document ingestion pipeline engineered to transform unstruct
 ```mermaid
 flowchart TD
     subgraph Ingestion["Input Layer"]
-        DOC["Unstructured Invoices / PDFs / Text"]
+        DOC["Invoice text"]
     end
 
     subgraph Engine["DocuFlow Extraction Engine"]
@@ -44,7 +44,7 @@ flowchart TD
 
 ## ✨ Key Technical Highlights
 
-1. **Deterministic Structured Outputs:** Uses Zod schemas enforcing strict contracts for invoice numbers, ISO dates, line items, and currency codes. Eliminates hallucinations.
+1. **Schema validation:** Zod schemas enforce a strict contract for invoice numbers, ISO dates, line items, and currency codes. The parser is deterministic (regular expressions), so there is no model to hallucinate; see the Evals section for what it gets wrong.
 2. **Automated 3-Way Reconciliation:** Automatically cross-checks:
    * $\sum (\text{Quantity} \times \text{Unit Price}) == \text{Subtotal}$
    * $\text{Subtotal} + \text{Tax Amount} == \text{Grand Total}$
@@ -76,7 +76,7 @@ npm run build
 ```bash
 npm run demo
 ```
-This executes the batch pipeline over sample enterprise invoices, demonstrates automatic discrepancy detection, and prints formatted SQLite verification tables.
+This executes the batch pipeline over synthetic sample invoices, demonstrates automatic discrepancy detection, and prints formatted SQLite verification tables.
 
 ### Example output
 
@@ -188,7 +188,7 @@ Limits: 10 cases is a small set; it catches regressions on these patterns, not g
 
 ## 👤 Author
 **Alejandro** — AI-Augmented Developer & Automation Engineer  
-*Specialized in Structured Outputs, Autonomous Pipelines, and Enterprise Integrations.*
+*Focus: validated data pipelines, automation, and human-in-the-loop workflows.*
 
 ## 📄 License
 MIT
