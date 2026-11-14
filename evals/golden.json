@@ -1,0 +1,62 @@
+[
+  {
+    "id": "standard-usd",
+    "note": "Labelled fields, three line items, totals add up.",
+    "text": "INVOICE #INV-1001\nDate: 2026-03-02\nVendor: Blue Harbor Supplies LLC\nCustomer: Pinecrest Tools Inc.\n\nLine Items:\n- Label printer: 2 x $150.00 = $300.00\n- Thermal paper box: 10 x $12.50 = $125.00\n- Setup visit: 1 x $75.00 = $75.00\n\nSubtotal: $500.00\nTax: $50.00\nTotal: $550.00\n",
+    "expected": { "invoice_number": "INV-1001", "issue_date": "2026-03-02", "vendor_name": "Blue Harbor Supplies LLC", "customer_name": "Pinecrest Tools Inc.", "currency": "USD", "subtotal": 500, "tax_amount": 50, "grand_total": 550, "item_count": 3 }
+  },
+  {
+    "id": "thousands-separators",
+    "note": "Amounts written with commas.",
+    "text": "Invoice No: INV-1002\nDate: 2026-03-05\nVendor: Northwind Hosting Co.\nCustomer: Redwood Clinic Group\n\n- Annual hosting plan: 1 x $12,000.00 = $12,000.00\n- Migration service: 2 x $1,250.00 = $2,500.00\n\nSubtotal: $14,500.00\nTax: $1,450.00\nTotal: $15,950.00\n",
+    "expected": { "invoice_number": "INV-1002", "issue_date": "2026-03-05", "vendor_name": "Northwind Hosting Co.", "customer_name": "Redwood Clinic Group", "currency": "USD", "subtotal": 14500, "tax_amount": 1450, "grand_total": 15950, "item_count": 2 }
+  },
+  {
+    "id": "from-bill-to-labels",
+    "note": "Uses From / Bill To instead of Vendor / Customer.",
+    "text": "Invoice Number: A-2003\nDate: 2026-03-09\nFrom: Maple Street Design Studio\nBill To: Quarry Lane Bakery\n\n- Logo redesign: 1 x $900.00 = $900.00\n\nSubtotal: $900.00\nTax: $90.00\nTotal: $990.00\n",
+    "expected": { "invoice_number": "A-2003", "issue_date": "2026-03-09", "vendor_name": "Maple Street Design Studio", "customer_name": "Quarry Lane Bakery", "currency": "USD", "subtotal": 900, "tax_amount": 90, "grand_total": 990, "item_count": 1 }
+  },
+  {
+    "id": "totals-do-not-add-up",
+    "note": "Stated total is wrong on purpose; fields must still be read as written.",
+    "text": "INVOICE #INV-1004\nDate: 2026-03-11\nVendor: Lakeside Freight Ltd.\nCustomer: Orchard Hill Foods\n\n- Pallet delivery: 4 x $200.00 = $800.00\n\nSubtotal: $800.00\nTax: $80.00\nTotal: $900.00\n",
+    "expected": { "invoice_number": "INV-1004", "issue_date": "2026-03-11", "vendor_name": "Lakeside Freight Ltd.", "customer_name": "Orchard Hill Foods", "currency": "USD", "subtotal": 800, "tax_amount": 80, "grand_total": 900, "item_count": 1 }
+  },
+  {
+    "id": "zero-tax",
+    "note": "Tax line present with value zero.",
+    "text": "INVOICE #INV-1005\nDate: 2026-03-12\nVendor: Cedar Row Translations\nCustomer: Harbor Point Legal\n\n- Contract translation (pages): 20 x $18.00 = $360.00\n\nSubtotal: $360.00\nTax: $0.00\nTotal: $360.00\n",
+    "expected": { "invoice_number": "INV-1005", "issue_date": "2026-03-12", "vendor_name": "Cedar Row Translations", "customer_name": "Harbor Point Legal", "currency": "USD", "subtotal": 360, "tax_amount": 0, "grand_total": 360, "item_count": 1 }
+  },
+  {
+    "id": "euro-currency",
+    "note": "Amounts in euros.",
+    "text": "INVOICE #INV-1006\nDate: 2026-03-15\nVendor: Alpenblick Software GmbH\nCustomer: Rivermill Books Ltd.\n\n- Support plan: 1 x €1,000.00 = €1,000.00\n\nSubtotal: €1,000.00\nTax: €190.00\nTotal: €1,190.00\n",
+    "expected": { "invoice_number": "INV-1006", "issue_date": "2026-03-15", "vendor_name": "Alpenblick Software GmbH", "customer_name": "Rivermill Books Ltd.", "currency": "EUR", "subtotal": 1000, "tax_amount": 190, "grand_total": 1190, "item_count": 1 }
+  },
+  {
+    "id": "written-date",
+    "note": "Date written in words.",
+    "text": "INVOICE #INV-1007\nDate: March 18, 2026\nVendor: Foxglove Catering\nCustomer: Summit Ridge Events\n\n- Lunch service: 40 x $15.00 = $600.00\n\nSubtotal: $600.00\nTax: $60.00\nTotal: $660.00\n",
+    "expected": { "invoice_number": "INV-1007", "issue_date": "2026-03-18", "vendor_name": "Foxglove Catering", "customer_name": "Summit Ridge Events", "currency": "USD", "subtotal": 600, "tax_amount": 60, "grand_total": 660, "item_count": 1 }
+  },
+  {
+    "id": "invoice-date-label-first",
+    "note": "The line 'Invoice Date' comes before the invoice number.",
+    "text": "Invoice Date: 2026-03-20\nInvoice No: INV-1008\nVendor: Tidewater Print Shop\nCustomer: Elm Court Dental\n\n- Appointment cards: 500 x $0.20 = $100.00\n\nSubtotal: $100.00\nTax: $10.00\nTotal: $110.00\n",
+    "expected": { "invoice_number": "INV-1008", "issue_date": "2026-03-20", "vendor_name": "Tidewater Print Shop", "customer_name": "Elm Court Dental", "currency": "USD", "subtotal": 100, "tax_amount": 10, "grand_total": 110, "item_count": 1 }
+  },
+  {
+    "id": "missing-parties",
+    "note": "No vendor or customer in the text: nothing should be made up, so no invoice should come back.",
+    "text": "INVOICE #INV-1009\nDate: 2026-03-22\n\n- Consulting hours: 3 x $100.00 = $300.00\n\nSubtotal: $300.00\nTax: $30.00\nTotal: $330.00\n",
+    "expected": null
+  },
+  {
+    "id": "not-an-invoice",
+    "note": "Plain text that is not an invoice: no invoice should come back.",
+    "text": "Team notes, Monday.\nWe agreed to move the release to next week.\nAction: update the roadmap and tell the support team.\n",
+    "expected": null
+  }
+]

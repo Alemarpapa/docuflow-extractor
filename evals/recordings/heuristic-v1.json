@@ -1,0 +1,233 @@
+{
+  "label": "heuristic-v1",
+  "outputs": {
+    "standard-usd": {
+      "invoice_number": "INV-1001",
+      "issue_date": "2026-03-02",
+      "vendor_name": "Blue Harbor Supplies LLC",
+      "customer_name": "Pinecrest Tools Inc.",
+      "currency": "USD",
+      "items": [
+        {
+          "description": "Label printer",
+          "quantity": 2,
+          "unit_price": 150,
+          "total": 300
+        },
+        {
+          "description": "Thermal paper box",
+          "quantity": 10,
+          "unit_price": 12.5,
+          "total": 125
+        },
+        {
+          "description": "Setup visit",
+          "quantity": 1,
+          "unit_price": 75,
+          "total": 75
+        }
+      ],
+      "subtotal": 500,
+      "tax_rate_pct": 10,
+      "tax_amount": 50,
+      "grand_total": 550,
+      "payment_terms": "Net 30",
+      "confidence_score": 0.98
+    },
+    "thousands-separators": {
+      "invoice_number": "INV-1002",
+      "issue_date": "2026-03-05",
+      "vendor_name": "Northwind Hosting Co.",
+      "customer_name": "Redwood Clinic Group",
+      "currency": "USD",
+      "items": [
+        {
+          "description": "Annual hosting plan",
+          "quantity": 1,
+          "unit_price": 12000,
+          "total": 12000
+        },
+        {
+          "description": "Migration service",
+          "quantity": 2,
+          "unit_price": 1250,
+          "total": 2500
+        }
+      ],
+      "subtotal": 14500,
+      "tax_rate_pct": 10,
+      "tax_amount": 1450,
+      "grand_total": 15950,
+      "payment_terms": "Net 30",
+      "confidence_score": 0.98
+    },
+    "from-bill-to-labels": {
+      "invoice_number": "A-2003",
+      "issue_date": "2026-03-09",
+      "vendor_name": "Maple Street Design Studio",
+      "customer_name": "Quarry Lane Bakery",
+      "currency": "USD",
+      "items": [
+        {
+          "description": "Logo redesign",
+          "quantity": 1,
+          "unit_price": 900,
+          "total": 900
+        }
+      ],
+      "subtotal": 900,
+      "tax_rate_pct": 10,
+      "tax_amount": 90,
+      "grand_total": 990,
+      "payment_terms": "Net 30",
+      "confidence_score": 0.98
+    },
+    "totals-do-not-add-up": {
+      "invoice_number": "INV-1004",
+      "issue_date": "2026-03-11",
+      "vendor_name": "Lakeside Freight Ltd.",
+      "customer_name": "Orchard Hill Foods",
+      "currency": "USD",
+      "items": [
+        {
+          "description": "Pallet delivery",
+          "quantity": 4,
+          "unit_price": 200,
+          "total": 800
+        }
+      ],
+      "subtotal": 800,
+      "tax_rate_pct": 10,
+      "tax_amount": 80,
+      "grand_total": 900,
+      "payment_terms": "Net 30",
+      "confidence_score": 0.98
+    },
+    "zero-tax": {
+      "invoice_number": "INV-1005",
+      "issue_date": "2026-03-12",
+      "vendor_name": "Cedar Row Translations",
+      "customer_name": "Harbor Point Legal",
+      "currency": "USD",
+      "items": [
+        {
+          "description": "Contract translation (pages)",
+          "quantity": 20,
+          "unit_price": 18,
+          "total": 360
+        }
+      ],
+      "subtotal": 360,
+      "tax_rate_pct": 10,
+      "tax_amount": 0,
+      "grand_total": 360,
+      "payment_terms": "Net 30",
+      "confidence_score": 0.98
+    },
+    "euro-currency": {
+      "invoice_number": "INV-1006",
+      "issue_date": "2026-03-15",
+      "vendor_name": "Alpenblick Software GmbH",
+      "customer_name": "Rivermill Books Ltd.",
+      "currency": "USD",
+      "items": [
+        {
+          "description": "Cloud Infrastructure & Managed AI Services",
+          "quantity": 1,
+          "unit_price": 1250,
+          "total": 1250
+        }
+      ],
+      "subtotal": 1250,
+      "tax_rate_pct": 10,
+      "tax_amount": 125,
+      "grand_total": 1375,
+      "payment_terms": "Net 30",
+      "confidence_score": 0.98
+    },
+    "written-date": {
+      "invoice_number": "INV-1007",
+      "issue_date": "2026-10-19",
+      "vendor_name": "Foxglove Catering",
+      "customer_name": "Summit Ridge Events",
+      "currency": "USD",
+      "items": [
+        {
+          "description": "Lunch service",
+          "quantity": 40,
+          "unit_price": 15,
+          "total": 600
+        }
+      ],
+      "subtotal": 600,
+      "tax_rate_pct": 10,
+      "tax_amount": 60,
+      "grand_total": 660,
+      "payment_terms": "Net 30",
+      "confidence_score": 0.98
+    },
+    "invoice-date-label-first": {
+      "invoice_number": "Date",
+      "issue_date": "2026-03-20",
+      "vendor_name": "Tidewater Print Shop",
+      "customer_name": "Elm Court Dental",
+      "currency": "USD",
+      "items": [
+        {
+          "description": "Appointment cards",
+          "quantity": 500,
+          "unit_price": 0.2,
+          "total": 100
+        }
+      ],
+      "subtotal": 100,
+      "tax_rate_pct": 10,
+      "tax_amount": 10,
+      "grand_total": 110,
+      "payment_terms": "Net 30",
+      "confidence_score": 0.98
+    },
+    "missing-parties": {
+      "invoice_number": "INV-1009",
+      "issue_date": "2026-03-22",
+      "vendor_name": "Acme Cloud Computing LLC",
+      "customer_name": "TechCorp Global Inc.",
+      "currency": "USD",
+      "items": [
+        {
+          "description": "Consulting hours",
+          "quantity": 3,
+          "unit_price": 100,
+          "total": 300
+        }
+      ],
+      "subtotal": 300,
+      "tax_rate_pct": 10,
+      "tax_amount": 30,
+      "grand_total": 330,
+      "payment_terms": "Net 30",
+      "confidence_score": 0.98
+    },
+    "not-an-invoice": {
+      "invoice_number": "INV-AUTO-001",
+      "issue_date": "2026-10-19",
+      "vendor_name": "Acme Cloud Computing LLC",
+      "customer_name": "TechCorp Global Inc.",
+      "currency": "USD",
+      "items": [
+        {
+          "description": "Cloud Infrastructure & Managed AI Services",
+          "quantity": 1,
+          "unit_price": 1250,
+          "total": 1250
+        }
+      ],
+      "subtotal": 1250,
+      "tax_rate_pct": 10,
+      "tax_amount": 125,
+      "grand_total": 1375,
+      "payment_terms": "Net 30",
+      "confidence_score": 0.98
+    }
+  }
+}
